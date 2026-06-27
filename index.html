@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Pulse | Hospital Management</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./images/download__12_-removebg-preview.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+</head>
+<body>
+    <div class="dashboard-container"> 
+      <!-- side bar -->
+       <div class="wrapper">
+       <div class="menu"><i class="bi bi-list" ></i></div>
+        <aside class="sidebar">
+        <div class="logo">
+           <img src="./images/download-removebg-preview.png" alt="Logo">
+        </div>
+        <p class="nav-label" id="main">MAIN MENU</p>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active" id="nav-dashboard">
+                <i class="bi bi-columns-gap"></i><span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-students">
+                <i class="bi bi-people"></i><span>Patients</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-teachers">
+                <i class="bi bi-person-check"></i><span>Doctors</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-classes">
+                <i class="bi bi-book"></i><span>Appoinments</span>
+            </a>
+             
+        </nav>
+
+        <p class="nav-label">SERVICES & TOOLS</p>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item" id="nav-library">
+              <i class="bi bi-bookshelf"></i><span>Laboratory</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-settings">
+                <i class="bi bi-gear"></i><span>Pharmacy</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-settings">
+                <i class="bi bi-gear"></i><span>Billing</span>
+            </a>
+        </nav>
+        <p class="nav-label">MANAGEMENT</p>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item" id="nav-library">
+              <i class="bi bi-bookshelf"></i><span>Reports</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-settings">
+                <i class="bi bi-gear"></i><span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <img src="./images/p2.jpg" alt="Admin Avatar" class="avatar">
+                <div class="user-info">
+                    <p class="user-name">Dr.S.Connor</p>
+                    <p class="user-role">Chief Admin</p>
+                </div>
+                <i class="fas fa-chevron-right chevron-icon"></i>
+            </div>
+        </div>
+    </aside>
+    </div>
+
+    <!-- main content -->
+     <main class="main-content">
+
+          <header class="header">
+            <div class="header-left">
+                  
+                <h1 class="page-title">Dashboard Overview</h1>
+                <p class="page-subtitle">Welcome back! Here is a summary of CarePulse operations today.</p>
+            </div>
+            <div class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="text" id="searchInput" placeholder=" Search students, teachers, classes…">
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" >
+                    <i class="bi bi-chat-left-dots"></i>
+                    <span class="notification-badge blue"></span>
+                </button>
+                <button class="icon-btn" >
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-badge red"></span>
+                </button>
+                <button class="primary-btn" >
+                    <i class="bi bi-plus-lg"></i><span>Export PDF</span>
+                </button>
+                <button class="primary-btn" >
+                    <i class="bi bi-plus-lg"></i><span>Add Patient</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Grid layout -->
+         <div class="grid-layout">
+
+             <section class="welcome-card">
+          <div class="welcome-text-wrapper">
+            <span class="welcome-badge"><i class="fa-solid fa-shield-halved"></i> CarePulse Central Command</span>
+            <h2>Welcome Back, Dr. Sarah Connor</h2>
+            <p>Your hospital is running efficiently today. The current bed occupancy is at 64% with 42 incoming scheduled appointments. Review pending insurance payouts and drug stock alerts below.</p>
+            <div class="welcome-quick-stats">
+              <div class="welcome-stat-item">
+                <span class="welcome-stat-value">94.8%</span>
+                <span class="welcome-stat-label">Efficiency Rate</span>
+              </div>
+              <div class="welcome-stat-item">
+                <span class="welcome-stat-value">12 mins</span>
+                <span class="welcome-stat-label">Avg. Wait Time</span>
+              </div>
+              <div class="welcome-stat-item">
+                <span class="welcome-stat-value">3 Active</span>
+                <span class="welcome-stat-label">ICU Emergencies</span>
+              </div>
+            </div>
+          </div>
+          <div class="welcome-img-wrapper">
+            <img src="./images/hospital_banner.png" alt="Medical Command Illustration" class="welcome-img">
+          </div>
+        </section>
+
+
+
+        
+        <!-- Statistics Cards Section -->
+        <section class="stats-grid">
+          <!-- Total Patients -->
+          <div class="stat-card blue">
+            <div class="stat-header">
+              <span class="stat-title">Total Patients</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-hospital-user"></i>
+              </div>
+            </div>
+            <div class="stat-body">
+              <span class="stat-value">1,284</span>
+              <span class="stat-trend trend-up">
+                <i class="fa-solid fa-arrow-up"></i> +4.2% <span style="color: #64748b;">from last week</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Total Doctors -->
+          <div class="stat-card teal">
+            <div class="stat-header">
+              <span class="stat-title">Active Doctors</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-user-doctor"></i>
+              </div>
+            </div>
+            <div class="stat-body">
+              <span class="stat-value">84</span>
+              <span class="stat-trend trend-up">
+                <i class="fa-solid fa-arrow-up"></i> +2.1% <span style="color: #64748b;">this month</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Today's Appointments -->
+          <div class="stat-card amber">
+            <div class="stat-header">
+              <span class="stat-title">Today's Appts</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+            </div>
+            <div class="stat-body">
+              <span class="stat-value">42</span>
+              <span class="stat-trend trend-up">
+                <i class="fa-solid fa-arrow-up"></i> +12% <span style="color: #64748b;">vs yesterday</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Available Beds -->
+          <div class="stat-card green">
+            <div class="stat-header">
+              <span class="stat-title">Available Beds</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-bed-pulse"></i>
+              </div>
+            </div>
+            <div class="stat-body">
+              <span class="stat-value">128 <span style="font-size: 0.95rem; font-weight: 500; color: #64748b;">/ 200</span></span>
+              <span class="stat-trend trend-neutral">
+                <i class="fa-solid fa-minus"></i> 64% <span style="color: #64748b;">bed occupancy</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Monthly Revenue -->
+          <div class="stat-card cyan">
+            <div class="stat-header">
+              <span class="stat-title">Monthly Revenue</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+            </div>
+            <div class="stat-body">
+              <span class="stat-value">$148.2K</span>
+              <span class="stat-trend trend-up">
+                <i class="fa-solid fa-arrow-up"></i> +8.5% <span style="color: #64748b;">target achieved</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Emergency Cases -->
+          <div class="stat-card rose">
+            <div class="stat-header">
+              <span class="stat-title">Emergency Cases</span>
+              <div class="stat-icon-wrapper">
+                <i class="fa-solid fa-truck-medical"></i>
+              </div>
+            </div>
+            <div class="stat-body">
+              <span class="stat-value">7</span>
+              <span class="stat-trend trend-down">
+                <i class="fa-solid fa-circle-exclamation"></i> Critical <span style="color: #64748b;">(3 in ICU)</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+
+             <section class="main-grid">
+                <div class="card1 chart-box">
+                    <div class="card-header">
+                        <h2>Admissions & Discharges Trend</h2>
+                        <select class="date-filter" id="termFilter">
+                            <option>Weekly </option>
+                            <option>Monthly</option>
+                            <option>Annual</option>
+                        </select>
+                    </div>
+                    <div class="chart-container-img">
+                        <img src="./images/graph.png" alt="Academic Performance Growth Chart" class="graph-image">
+                    </div>
+                </div>
+
+
+             <div class="card1 events-box">
+                    <div class="card-header">
+                        <h2>Upcoming Events</h2>
+                        <a href="#" class="view-all" id="viewAllEvents">View All</a>
+                    </div>
+                    <div class="event-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">9:30</span>
+                                <span class="month">AM</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Robert Downey</h4>
+                                <p>Dr. David Miller</p>
+                            </div>
+                            <span class="event-tag sport">Confirmed</span>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">7:20</span>
+                                <span class="month">PM</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Scarlett Johansson</h4>
+                                <p>Dr. Elena Rostova</p>
+                            </div>
+                            <span class="event-tag science">In Surgery</span>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">11:00</span>
+                                <span class="month">PM</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Mark Ruffalo</h4>
+                                <p>Dr. Marcus Vance</p>
+                            </div>
+                            <span class="event-tag meet">Scheduled</span>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">8:30</span>
+                                <span class="month">AM</span>
+                            </div>
+                            <div class="event-details">
+                                <h4>Chris Evans</h4>
+                                <p>Dr. Sophia Lee</p>
+                            </div>
+                            <span class="event-tag exam">Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <section class="extra-grid">
+
+
+                 <!-- Syllabus Coverage Progress Bars -->
+                <div class="card1 subject-box">
+                    <div class="card-header">
+                        <h2>Department Occupancy</h2>
+                        <span class="term-chip">Term 2</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Cardiology Unit (22 / 25 Beds)</span>
+                                <span class="prog-pct" style="color:#6366f1;">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, #6366f1, #6366f1);"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Intensive Care (ICU) (19 / 20 Beds)</span>
+                                <span class="prog-pct" style="color: #c084fc;">62%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 62%; background: linear-gradient(90deg, #c084fc, #c084fc);"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Pediatrics Ward (18 / 40 Beds)</span>
+                                <span class="prog-pct" style="color: #22c55e;">94%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94%; background: linear-gradient(90deg, #4ade80, #4ade80);"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Neurology Lab (21 / 30 Beds)</span>
+                                <span class="prog-pct" style="color: #fbbf24;">45%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%; background: linear-gradient(90deg, #fbbf24, #fbbf24);"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>Emergency Ward (12 / 15 Beds)</span>
+                                <span class="prog-pct" style="color: #f87171;">72%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%; background: linear-gradient(90deg, #f87171, #f87171);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                 <!-- Pharmacy Inventory Alert Card -->
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">
+                  <i class="fa-solid fa-prescription-bottle-medical"></i> Critical Stock Alerts
+                </span>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;">Restock All</button>
+              </div>
+              <div class="card-body">
+                <div class="pharmacy-list">
+                  <!-- Item 1 -->
+                  <div class="pharmacy-item">
+                    <div class="pharmacy-details">
+                      <span class="pharmacy-drug-name">Insulin Glargine</span>
+                      <div class="pharmacy-stock-status">
+                        <div class="pharmacy-bar-bg">
+                          <div class="pharmacy-bar-fill danger" style="width: 8%;"></div>
+                        </div>
+                        <span>8 Vials left</span>
+                      </div>
+                    </div>
+                    <span class="badge danger" style="font-size: 0.65rem; padding: 3px 8px;background-color: rgb(255, 206, 206); color: red;">Critical</span>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="pharmacy-item">
+                    <div class="pharmacy-details">
+                      <span class="pharmacy-drug-name">Epinephrine 1mg/ml</span>
+                      <div class="pharmacy-stock-status">
+                        <div class="pharmacy-bar-bg">
+                          <div class="pharmacy-bar-fill danger" style="width: 15%;"></div>
+                        </div>
+                        <span>15 Ampoules left</span>
+                      </div>
+                    </div>
+                    <span class="badge danger" style="font-size: 0.65rem; padding: 3px 8px; background-color: rgb(255, 194, 194); color: red;">Critical</span>
+                  </div>
+
+                  <!-- Item 3 -->
+                  <div class="pharmacy-item">
+                    <div class="pharmacy-details">
+                      <span class="pharmacy-drug-name">Amoxicillin 500mg</span>
+                      <div class="pharmacy-stock-status">
+                        <div class="pharmacy-bar-bg">
+                          <div class="pharmacy-bar-fill warning" style="width: 32%;"></div>
+                        </div>
+                        <span>42 Boxes left</span>
+                      </div>
+                    </div>
+                    <span class="badge warning" style="font-size: 0.65rem; padding: 3px 8px; background-color: rgb(255, 255, 163); color: rgb(255, 187, 0);">Low Stock</span>
+                  </div>
+
+                  <!-- Item 4 -->
+                  <div class="pharmacy-item">
+                    <div class="pharmacy-details">
+                      <span class="pharmacy-drug-name">Paracetamol 500mg</span>
+                      <div class="pharmacy-stock-status">
+                        <div class="pharmacy-bar-bg">
+                          <div class="pharmacy-bar-fill success" style="width: 85%;"></div>
+                        </div>
+                        <span>850 Boxes left</span>
+                      </div>
+                    </div>
+                    <span class="badge success" style="font-size: 0.65rem; padding: 3px 8px; background-color: rgb(166, 252, 166);color: green;">In Stock</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+              
+
+
+        <div class="card1 highlight-box">
+                    <div class="card-header">
+                        <h2>Doctor of the year</h2>
+                        <span class="term-chip1 gold"> july</span>
+                    </div>
+                    <div class="teacher-highlight">
+                        <img src="./images/image copy 7.png" alt="Teacher of the Month — Prof. Sarah Jenkins" class="teacher-img">
+            
+                        <div class="teacher-bio">
+                            <h3>Dr. David Miller</h3>
+                            <p>Cardiologist</p>
+                            <div class="rating" >
+                                <i class="bi bi-star-fill" style="color: orange;"></i>
+                                <i class="bi bi-star-fill"style="color: orange;"></i>
+                                <i class="bi bi-star-fill"style="color: orange;"></i>
+                                <i class="bi bi-star-fill"style="color: orange;"></i>
+                                <i class="bi bi-star"></i>
+                                <span>(4.8/5)</span>
+                            </div>
+                            <div class="teacher-stats">
+                                <div class="t-stat">
+                                    <strong>12</strong><span>Yrs Exp</span>
+                                </div>
+                                <div class="t-stat">
+                                    <strong>100</strong><span>Patients</span>
+                                </div>
+                                <div class="t-stat">
+                                    <strong>98%</strong><span>Success Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="bottom-grid">
+
+            <div class="card1 table-box">
+                    <div class="card-header">
+                        <h2>Recent Admissions</h2>
+                        <button class="text-btn"id="seeAllBtn">See all →</button>
+                    </div>
+
+                      <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Patient ID</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Doctor</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="table-user">
+                                            <div class="small-avatar a1">AS</div>
+                                            <div>
+                                                <strong>Anu Sri</strong>
+                                                <p style="font-size:0.7rem;color:#64748b;">anu.sri@email.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>#PT-0922</td>
+                                    <td>24</td>
+                                    <td><span class="status-badge success">Female</span></td>
+                                    <td><span class="status-badge success">Dr. John Doe</span></td>
+                                    <td><button class="action-btn" title="View"><i class="bi bi-eye"></i></button></td>
+                                    <td><span class="status-badge success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-user">
+                                            <div class="small-avatar a2">SM</div>
+                                            <div>
+                                                <strong>Sarah Moto</strong>
+                                                <p style="font-size:0.7rem;color:#64748b;">sarah.moto@email.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>#PT-0923</td>
+                                    <td>45</td>
+                                    <td><span class="status-badge success">Male</span></td>
+                                    <td><span class="status-badge success">Dr.Ramya</span></td>
+                                    <td><button class="action-btn" title="View"><i class="bi bi-eye"></i></button></td>
+                                    <td><span class="status-badge success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-user">
+                                            <div class="small-avatar a3">MW</div>
+                                            <div>
+                                                <strong>Mura Wong</strong>
+                                                <p style="font-size:0.7rem;color:#64748b;">mura.wong@email.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>#PT-0786</td>
+                                    <td>56</td>
+                                    <td><span class="status-badge warning">Male</span></td>
+                                    <td><span class="status-badge warning">Dr .lavanya</span></td>
+                                    <td><button class="action-btn" title="View"><i class="bi bi-eye"></i></button></td>
+                                                <td><span class="status-badge success">Active</span></td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="table-user">
+                                            <div class="small-avatar a4">AL</div>
+                                            <div>
+                                                <strong>Arun luna</strong>
+                                                <p style="font-size:0.7rem;color:#64748b;">arun.luna@email.com</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>#PT-0978</td>
+                                    <td>23</td>
+                                    <td><span class="status-badge danger">Female</span></td>
+                                    <td><span class="status-badge warning">Dr.sudha</span></td>
+                                    <td><button class="action-btn" title="View"><i class="bi bi-eye"></i></button></td>
+                                     <td><span class="status-badge success">Active</span></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+            </div>
+        </section>
+        
+          <!-- Bottom Row 1 (3 Columns) -->
+        <section class="dashboard-bottom-row">
+          <!-- Card 1: Blood Bank Status -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <i class="fa-solid fa-droplet" style="color: #ef4444;"></i> Blood Bank Status
+              </span>
+              <span style="font-size: 0.8rem; color: #64748b;">8 Groups</span>
+            </div>
+            <div class="card-body">
+              <div class="blood-grid">
+                <div class="blood-card">
+                  <span class="blood-type">A+</span>
+                  <span class="blood-units">18 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill high" style="width: 80%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">A-</span>
+                  <span class="blood-units">6 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill low" style="width: 30%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">B+</span>
+                  <span class="blood-units">24 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill high" style="width: 95%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">B-</span>
+                  <span class="blood-units">4 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill low" style="width: 20%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">O+</span>
+                  <span class="blood-units">32 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill high" style="width: 90%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">O-</span>
+                  <span class="blood-units">8 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill medium" style="width: 40%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">AB+</span>
+                  <span class="blood-units">12 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill medium" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="blood-card">
+                  <span class="blood-type">AB-</span>
+                  <span class="blood-units">2 Units</span>
+                  <div class="blood-bar-bg">
+                    <div class="blood-bar-fill low" style="width: 10%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Staff Duty Shifts -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <i class="fa-solid fa-user-clock" style="color: #ef4444;"></i> On-Duty Staff
+              </span>
+              <a href="#" style="font-size: 0.8rem; color: #ef4444; font-weight: 500;">View Roster</a>
+            </div>
+            <div class="card-body">
+              <div class="shift-list">
+                <div class="shift-item">
+                  <div class="shift-avatar" style="background-color: #f1f5f9; color: #ef4444;">NW</div>
+                  <div class="shift-info">
+                    <span class="shift-name">Nurse Wendy Watson</span>
+                    <span class="shift-role">Emergency Ward A</span>
+                  </div>
+                  <div class="shift-time">
+                    08:00 AM
+                    <span>- 04:00 PM</span>
+                  </div>
+                </div>
+                <div class="shift-item">
+                  <div class="shift-avatar" style="background-color: #f1f5f9; color: #3b82f6;">TC</div>
+                  <div class="shift-info">
+                    <span class="shift-name">Tech. Chris Evans</span>
+                    <span class="shift-role">Radiology Lab</span>
+                  </div>
+                  <div class="shift-time">
+                    09:00 AM
+                    <span>- 05:00 PM</span>
+                  </div>
+                </div>
+                <div class="shift-item">
+                  <div class="shift-avatar" style="background-color: #f1f5f9; color: #f59e0b;">NH</div>
+                  <div class="shift-info">
+                    <span class="shift-name">Nurse Halley Berry</span>
+                    <span class="shift-role">Pediatrics Ward</span>
+                  </div>
+                  <div class="shift-time">
+                    02:00 PM
+                    <span>- 10:00 PM</span>
+                  </div>
+                </div>
+                <div class="shift-item">
+                  <div class="shift-avatar" style="background-color: #f1f5f9; color: #ef4444;">RC</div>
+                  <div class="shift-info">
+                    <span class="shift-name">Dr. Robert Chen</span>
+                    <span class="shift-role">ICU Chief Resident</span>
+                  </div>
+                  <div class="shift-time">
+                    04:00 PM
+                    <span>- 12:00 AM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Patient Satisfaction Ratings -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <i class="fa-solid fa-face-smile" style="color: #f59e0b;"></i> Patient Satisfaction
+              </span>
+              <span style="font-size: 0.8rem; color: #64748b;">Avg 4.6/5.0</span>
+            </div>
+            <div class="card-body">
+              <div class="satisfaction-list">
+                <div class="satisfaction-item">
+                  <div class="satisfaction-dept-icon" style="background-color: #f1f5f9; color: #ef4444  ;">
+                    <i class="fa-solid fa-user-doctor"></i>
+                  </div>
+                  <div class="satisfaction-info">
+                    <span class="satisfaction-dept-name">Outpatient Clinic</span>
+                    <div class="satisfaction-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star empty"></i>
+                    </div>
+                  </div>
+                  <span class="satisfaction-score">4.2</span>
+                </div>
+                <div class="satisfaction-item">
+                  <div class="satisfaction-dept-icon" style="background-color: #f1f5f9; color: #3b82f6;">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                  </div>
+                  <div class="satisfaction-info">
+                    <span class="satisfaction-dept-name">Cardiology Unit</span>
+                    <div class="satisfaction-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                  <span class="satisfaction-score">4.9</span>
+                </div>
+                <div class="satisfaction-item">
+                  <div class="satisfaction-dept-icon" style="background-color: #f1f5f9; color: #ef4444;">
+                    <i class="fa-solid fa-truck-medical"></i>
+                  </div>
+                  <div class="satisfaction-info">
+                    <span class="satisfaction-dept-name">Emergency Room</span>
+                    <div class="satisfaction-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star empty"></i>
+                    </div>
+                  </div>
+                  <span class="satisfaction-score">3.8</span>
+                </div>
+                <div class="satisfaction-item">
+                  <div class="satisfaction-dept-icon" style="background-color: #f1f5f9; color: #f59e0b;">
+                    <i class="fa-solid fa-child"></i>
+                  </div>
+                  <div class="satisfaction-info">
+                    <span class="satisfaction-dept-name">Pediatrics Ward</span>
+                    <div class="satisfaction-stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star empty"></i>
+                    </div>
+                  </div>
+                  <span class="satisfaction-score">4.5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+         <section class="mid2-grid">
+
+            <div class="card1 leaderboard-box">
+                    <div class="card-header">
+                        <h2>Critical Stock Alerts</h2>
+                        <span class="term-chip2">This Term</span>
+                    </div>
+                    <div class="leaderboard-list">
+                        <!-- Rank 1 -->
+                        <div class="lb-item rank-1">
+                            <div class="lb-rank">1</div>
+                            <div class="small-avatar a1" style="width:40px;height:40px;font-size:0.85rem;">AM</div>
+                            <div class="lb-info">
+                                <strong>Insulin Glargine</strong>
+                                <p>8 Vials left</p>
+                            </div>
+                            <div class="lb-score">
+                                <span class="lb-badge gold">94.4</span>
+                            </div>
+                        </div>
+                        <!-- Rank 2 -->
+                        <div class="lb-item rank-2">
+                            <div class="lb-rank">2</div>
+                            <div class="small-avatar a3" style="width:40px;height:40px;font-size:0.85rem;">EP</div>
+                            <div class="lb-info">
+                                <strong>Epinephrine 1mg/ml</strong>
+                                <p>15 Ampoules left</p>
+                            </div>
+                            <div class="lb-score">
+                                <span class="lb-badge silver">99.1</span>
+                            </div>
+                        </div>
+                        <!-- Rank 3 -->
+                        <div class="lb-item rank-3">
+                            <div class="lb-rank">3</div>
+                            <div class="small-avatar a2" style="width:40px;height:40px;font-size:0.85rem;">IL</div>
+                            <div class="lb-info">
+                                <strong>Insulin Lispro</strong>
+                                <p>12 Vials left</p>
+                            </div>
+                            <div class="lb-score">
+                                <span class="lb-badge bronze">95.3</span>
+                            </div>
+                        </div>
+                        <!-- Rank 4 -->
+                        <div class="lb-item">
+                            <div class="lb-rank">4</div>
+                            <div class="small-avatar a4" style="width:40px;height:40px;font-size:0.85rem;">AC</div>
+                            <div class="lb-info">
+                                <strong>Amoxicillin </strong>
+                                <p>25 Tablets left</p>
+                            </div>
+                            <div class="lb-score">
+                                <span class="lb-badge plain">91.0</span>
+                            </div>
+                        </div>
+                        <!-- Rank 5 -->
+                        <div class="lb-item">
+                            <div class="lb-rank">5</div>
+                            <div class="small-avatar" style="width:40px;height:40px;font-size:0.85rem;background:rgba(168,85,247,0.12);color:var(--secondary);">SI</div>
+                            <div class="lb-info">
+                                <strong>Salbutamol Inhaler</strong>
+                                <p>10 Inhalers left</p>
+                            </div>
+                            <div class="lb-score">
+                                <span class="lb-badge plain">99.7</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+                <div class="card1 notice-box">
+                    <div class="card-header">
+                        <h2>Notice Board</h2>
+                        <a href="#" class="view-all">+ Post</a>
+                    </div>
+                    <div class="notice-list">
+                        <div class="notice-item urgent">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            <div>
+                                <h4>New Patient registered: John Doe</h4>
+                                <p>12 minutes ago | Reception Desk </p>
+                            </div>
+                        </div>
+                        <div class="notice-item info">
+                            <i class="bi bi-exclamation-circle"></i>
+                            <div>
+                                <h4>Pharmacy restocked Amoxicillin</h4>
+                                <p>4 hours ago | Supply Chain</p>
+                            </div>
+                        </div>
+                        <div class="notice-item success">
+                            <i class="bi bi-award"></i>
+                            <div>
+                                <h4>Blood Bank received 12 units A+</h4>
+                                <p>Blood Bank received 12 units A+</p>
+                            </div>
+                        </div>
+                        <div class="notice-item info">
+                            <i class="bi bi-calendar-check"></i>
+                            <div>
+                                <h4>Lab report released for Robert Brown </h4>
+
+                                <p>1 hour ago | Pathology Lab</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         </section>
+
+         
+
+
+                <section class="row7-grid">
+                    <div class="card1 timetable-box">
+                        <div class="card-header">
+                            <h2>Weekly Timetable — Doctors On-Duty</h2>
+                            <select class="date-filter" id="gradeFilter">
+                                <option>WARD 1</option>
+                                <option>WARD 2</option>
+                                <option>WARD 3</option>
+                            </select>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="data-table timetable">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="time-slot">08:00 - 09:00</td>
+                                        <td><span class="tt-pill math">Dr. David Wilson</span></td>
+                                        <td><span class="tt-pill english">Dr. Maria Thomas</span></td>
+                                        <td><span class="tt-pill science">Dr. William Jackson</span></td>
+                                        <td><span class="tt-pill math">Dr. Nancy Robinson</span></td>
+                                        <td><span class="tt-pill history">Dr. Susan Martin</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-slot">09:00 - 10:00</td>
+                                        <td><span class="tt-pill science">Dr. Jennifer Miller</span></td>
+                                        <td><span class="tt-pill math">Dr. Lisa Taylor</span></td>
+                                        <td><span class="tt-pill arts">Dr. Susan Martin</span></td>
+                                        <td><span class="tt-pill english">Dr. Maria Thomas</span></td>
+                                        <td><span class="tt-pill science">Dr. David Wilson</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-slot">10:00 - 10:20</td>
+                                        <td colspan="5" class="break-row"> Short Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-slot">10:20 - 11:20</td>
+                                        <td><span class="tt-pill history">Dr. Susan Martin</span></td>
+                                        <td><span class="tt-pill arts">Dr. John Doe</span></td>
+                                        <td><span class="tt-pill english">Dr.Rova</span></td>
+                                        <td><span class="tt-pill science">Dr. Nancy Robinson</span></td>
+                                        <td><span class="tt-pill math">Dr. Richard Harris</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-slot">11:20 - 12:20</td>
+                                        <td><span class="tt-pill arts">Dr. Maria Thomas</span></td>
+                                        <td><span class="tt-pill history">Dr. Nancy Robinson</span></td>
+                                        <td><span class="tt-pill math">Dr. Susan Martin</span></td>
+                                        <td><span class="tt-pill arts">Dr.Rova</span></td>
+                                        <td><span class="tt-pill english">Dr. Nancy Robinson</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-slot">12:20 - 01:00</td>
+                                        <td colspan="5" class="break-row"> Lunch Break</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="time-slot">01:00 - 02:00</td>
+                                        <td><span class="tt-pill english">Dr. John Smith</span></td>
+                                        <td><span class="tt-pill science">Dr. Lisa Taylor</span></td>
+                                        <td><span class="tt-pill history">Dr. Richard Harris</span></td>
+                                        <td><span class="tt-pill math">Dr. John Doe</span></td>
+                                        <td><span class="tt-pill free">Dr. Robert Moore</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                 <section class="row8-grid">
+                    <div class="card1 gallery-box">
+                        <div class="card-header">
+                            <h2>Campus Life</h2>
+                            <a href="#" class="view-all">View Gallery</a>
+                        </div>
+                        <div class="gallery-grid">
+                            <!-- Card 1 — Classroom -->
+                            <div class="gallery-card">
+                                <div class="gallery-img-wrap">
+                                    <img src="./images/image copy 14.png"
+                                        alt="Modern Classroom" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-tag">Academics</span>
+                                    </div>
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>Hospital Building</h4>
+                                    <p>A hospital building is designed to provide safe and efficient healthcare services.such as OPD, IPD, ICU, Operation Theatre, Pharmacy, Laboratory</p>
+                                </div>
+                            </div>
+                            <!-- Card 2 — Science Lab -->
+                            <div class="gallery-card">
+                                <div class="gallery-img-wrap">
+                                    <img src="./images/image copy 15.png"
+                                        alt="Science Laboratory" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-tag">Science Lab</span>
+                                    </div>
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>Operation Theatre</h4>
+                                    <p>The Operation Theatre is a specialized area where surgical procedures are performed under sterile conditions.</p>
+                                </div>
+                            </div>
+                            <!-- Card 3 — Sports -->
+                            <div class="gallery-card">
+                                <div class="gallery-img-wrap">
+                                    <img src="./images/image copy 16.png"
+                                        alt="Sports Facilities" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-tag">Sports</span>
+                                    </div>
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>Laboratory</h4>
+                                    <p>The laboratory performs diagnostic tests on blood, urine, and other samples to help doctors diagnose diseases and monitor treatment.</p>
+                                </div>
+                            </div>
+                            <!-- Card 4 — Library -->
+                            <div class="gallery-card">
+                                <div class="gallery-img-wrap">
+                                    <img src="./images/image copy 17.png"
+                                        alt="School Library" class="gallery-img">
+                                    <div class="gallery-overlay">
+                                        <span class="gallery-tag">Library</span>
+                                    </div>
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>Pharmacy</h4>
+                                    <p>The pharmacy stores and dispenses medicines prescribed by doctors. Pharmacists ensure patients receive the correct medications and dosage instructions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="row9-grid">
+                    <div class="campus-banner">
+                        <img src="./images/image copy 2.png" alt="EduFlow School Campus" class="banner-img">
+                        <div class="banner-overlay">
+                            <div class="banner-content">
+                                <h2 class="h">Welcome to CarePulse Hospital</h2>
+                                <p class="p">Providing quality healthcare services since 2005.Our hospital equipped with advanced medical technologies , experienced specialists ,and 24/7 emergency care</p>
+                                <div class="banner-stats">
+                                    <div class="b-stat">
+                                        <strong>500+</strong>
+                                        <span>Patients beds</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>150+</strong>
+                                        <span>Specialist Doctors</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>25+</strong>
+                                        <span>Medical Departments</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>24/7</strong>
+                                        <span>Emergency Services</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>1M+ </strong>
+                                        <span>Patients Treated</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>50+</strong>
+                                        <span>Operation Theaters</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>30+</strong>
+                                        <span>Ambulance</span>
+                                    </div>
+                                    <div class="b-stat">
+                                        <strong>98%</strong>
+                                        <span>Patient Satisfaction</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <section class="row10-grid">
+                    <!-- Activity Card 1 -->
+                    <div class="activity-card">
+                        <div class="activity-img-wrap">
+                            <img src="./images/image copy 2.png" alt="">
+                      
+                        </div>
+                        <div class="activity-body">
+                            <span class="activity-badge blue">Academic</span>
+                            <h4>Hospital Management</h4>
+                            <p>Improves patient care and treatment outcomes,Enhances the hospital's reputation.</p>
+                            <div class="activity-footer">
+                                <!-- <span><i class="bi bi-calendar"></i>Apr 15, 2026</span>
+                                <span><i class="bi bi-people"></i> 32 Participants</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Activity Card 2 -->
+                    <div class="activity-card">
+                        <div class="activity-img-wrap">
+                           <img src="./images/image copy.png" alt="">
+                        </div>
+                        <div class="activity-body">
+                            <span class="activity-badge purple">Arts</span>
+                            <h4>Treatments</h4>
+                            <p>Treatment is the medical care given to a patient to cure, control, or relieve a disease, injury, or health condition.</p>
+                            <div class="activity-footer">
+                                <!-- <span><i class="bi bi-calendar"></i> Apr 18, 2026</span>
+                                <span><i class="bi bi-palette"></i> 85 Artworks</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Activity Card 3 -->
+                    <div class="activity-card">
+                        <div class="activity-img-wrap">
+                           <img src="./images/image copy 3.png" alt="">
+                        </div>
+                        <div class="activity-body">
+                            <span class="activity-badge green">Technology</span>
+                            <h4>Academic Activities</h4>
+                            <p>Medical student classes and presentations.
+Continuing Medical Education (CME) programs.</p>
+                            <div class="activity-footer">
+                                <!-- <span><i class="bi bi-calendar"></i> Apr 20, 2026</span>
+                                <span><i class="bi bi-people"></i> 120 Students</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                 <section class="row11-grid">
+                    <div class="card1">
+                        <div class="card-header">
+                            <h2>Hospital Executives</h2>
+                            <a href="#" class="view-all">View All Staff</a>
+                        </div>
+                        <div class="staff-grid">
+                            <div class="staff-card">
+                                <img src="./images/image copy 8.png"
+                                    alt="Faculty Member" class="staff-photo">
+                                <div class="staff-details">
+                                    <h4>Dr. Sameena</h4>
+                                    <p>Founder of CarePulse</p>
+                                    <span class="staff-tag">Founder</span>
+                                </div>
+                            </div>
+                            <div class="staff-card">
+                                 <img src="./images/image copy 13.png"
+                                    alt="Faculty Member" class="staff-photo">
+                               <div class="staff-details">
+                                    <h4>Dr. Prathap C. Reddy</h4>
+                                    <p>Chairman of CarePulse</p>
+                                    <span class="staff-tag">Chairman</span>
+                                </div>
+                            </div>
+                            <div class="staff-card">
+                                <img src="./images/image copy 9.png"
+                                    alt="Faculty Member" class="staff-photo">
+                                <div class="staff-details">
+                                    <h4>Dr. Ananya Rao</h4>
+                                    <p>Director of CarePulse</p>
+                                    <span class="staff-tag">Director</span>
+                                </div>
+                            </div>
+                            <div class="staff-card">
+                                <img src="./images/image copy 10.png"
+                                    alt="Faculty Member" class="staff-photo">
+                                <div class="staff-details">
+                                    <h4>Dr. Ajay Verma</h4>
+                                    <p>Dean of CarePulse</p>
+                                    <span class="staff-tag">Dean</span>
+                                </div>
+                            </div>
+                            <div class="staff-card">
+                                <img src="./images/image copy 12.png"
+                                    alt="Faculty Member" class="staff-photo">
+                                <div class="staff-details">
+                                    <h4>Dr. Vikram Singh</h4>
+                                    <p>CEO of CarePulse</p>
+                                    <span class="staff-tag">CEO</span>
+                                </div>
+                            </div>
+                            <div class="staff-card">
+                                <img src="./images/image copy 11.png"
+                                    alt="Faculty Member" class="staff-photo">
+                                <div class="staff-details">
+                                    <h4>Dr. Arjun Kumar</h4>
+                                    <p>Administrator of CarePulse</p>
+                                    <span class="staff-tag">Administrator</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                 <section class="row12-grid">
+                    <div class="infra-card">
+                        <img src="./images/image copy 4.png" alt="">
+                        <div class="infra-overlay">
+                            <div class="infra-content">
+                                <i data-lucide="monitor" style="width:28px;height:28px;"></i>
+                                <h3>Technologies</h3>
+                                <p>They perform medical tests on blood, urine, and other samples.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infra-card">
+                         <img src="./images/image copy 5.png" alt="">
+                        <div class="infra-overlay">
+                            <div class="infra-content">
+                                <i data-lucide="mic" style="width:28px;height:28px;"></i>
+                                <h3>Doctors</h3>
+                                <p>Doctors diagnose illnesses, prescribe treatments, and perform surgeries.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infra-card">
+                         <img src="./images/image copy 3.png" alt="">
+                        <div class="infra-overlay">
+                            <div class="infra-content">
+                                <i data-lucide="waves" style="width:28px;height:28px;"></i>
+                                <h3>Management</h3>
+                                <p>Olympic-size pool with trained lifeguards and heated water system.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infra-card">
+                         <img src="./images/image copy 6.png" alt="">
+                        <div class="infra-overlay">
+                            <div class="infra-content">
+                                <i data-lucide="lamp-desk" style="width:28px;height:28px;"></i>
+                                <h3>Emergency Surgery</h3>
+                                <p>Hospitals generate various types of waste that must be disposed of safely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+         </div>
+     </main>
+    </div>
+
+
+</body>
+</html>
